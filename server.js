@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 // const Products = require("./Products");
 // const Users = require("./Users");
 const Orders = require("./Orders");
+const Formde = require("./Formde");
 const stripe = require("stripe")(
   "sk_test_51KvMuZSE2Bi1ByoVtItD5HcXltZXso8MUYK0JNm7Ek4YNqZLdLs6dQJbxpfkxmDn2LOn3pMwnqdp5aiAROaGKOcO00rStnX7oh"
 );
@@ -28,7 +29,9 @@ mongoose.connect(connection_url, {
 });
 // API
 
-app.get("/", (req, res) => res.status(200).send("API by Pratik Kajare"));
+app.get("/", (req, res) =>
+  res.status(200).send("API by Pratik Kajare for amazone and registration form")
+);
 
 // // add product
 
