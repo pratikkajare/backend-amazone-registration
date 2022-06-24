@@ -156,4 +156,19 @@ app.post("/orders/get", (req, res) => {
   });
 });
 
+//form Registration
+
+app.post("/formj", async (req, res) => {
+  const { name, email, phone, password } = req.body;
+  if (!name || !email || !phone || !password) {
+    return res.status(422).json({ error: "plz filled the field property" });
+  } else {
+    const user = new Formde({ name, email, phone, password });
+
+    await user.save();
+    res.status(201).json({ message: "user registered successful" });
+    console.log("documents added succefull");
+  }
+});
+
 app.listen(port, () => console.log("listening on the port", port));
